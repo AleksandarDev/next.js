@@ -169,7 +169,7 @@ export default class HotReloader {
     })
 
     const ignored = [
-      /(^|[/\\])\../, // .dotfiles
+      /(?:^|[\\\/])(\.(?!\.)[^\\\/]+)$/, // .dotfiles
       /node_modules/
     ]
     const windowsSettings = isWindowsBash() ? {
